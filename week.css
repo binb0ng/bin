@@ -1,0 +1,39 @@
+.me{
+color: #FFC228;
+text-align: center;
+
+}
+
+.a{
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+
+}
+
+.about{
+    color: #434CB4;
+    text-align: center;
+    border: 100px solid #FFFAF0;
+}
+
+h1{
+    font-weight: bold;
+}
+
+body{
+    background-color: #FFFAF0;
+}
+
+.b{
+    width: 100px;
+    height: 100px;
+   
+}
+
+.sns{
+    text-align: center;
+ 
+
+}
