@@ -49,26 +49,90 @@
 
       <div class="about">
         <h1>자기소개 페이지</h1>
+        <button onclick="querySel()">querySelector</button>
       </div>
+  
     
 
       <div class="me">
-        <img class="a" src="IMG_0672.jpg" alt=""> <p></p>
-        <p></p>
-<p>이름 : 이해빈</p>
-<p>파트 : 기획/디자인</p>
-<p>거주지 : 안양</p>
+        <img class="a" src="img/IMG_0672.jpg" alt="고양이"> <p></p>
+        <br>
+        <p>이름 : 이해빈</p>
+        <p>파트 : 기획/디자인</p>
+        <p>거주지 : 안양</p>
 
       </div>
 
   <div class="sns">
     <a href="https://blog.naver.com/53791">
-    <img class="b" src="blog.jpg" alt=""></a>
+    <img class="b" src="img/blog.jpg" alt="블로그"></a>
   </div>
-    
-     
+
+    <br>
+
+  <h4>to do list</h4>
+  <div class="container">
+      <input id="inputField" type="text">   <!--text 입력창(할일 입력창) 만들기-->
+      <button id="addToDo"> + </button>     <!-- + 버튼 만들기 -->
+      <div class="to-dos" id="toDoList"> </div>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
+
+  </div>
     
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <body class='container'>
+      <h4>당신은 누구십니까?</h4>
+      <textarea class="form-control" rows="3" id="who" onkeydown="counter();">본인을 소개해주세요.</textarea>
+      <span id="count">(0/100)</span>
+          
+
+    <script>
+       function querySel() {
+      document.querySelector("h1").style.color = "#FFC228";
+    }
+
+      function counter() {
+              var content = document.getElementById('who').value;
+              if (content.length > 100) {
+                  content = content.substring(0,100);
+                  document.getElementById('who').value = content;
+              }
+              document.getElementById('count').innerHTML = '(' + content.length + '/100)';
+          }
+          counter();
+
+          let inputBox = document.getElementById('inputField');  // 할 일 입력창
+let addToDo = document.getElementById('addToDo');      // 버튼
+let toDoList = document.getElementById('toDoList');    // 할 일 리스트창
+
+addToDo.addEventListener('click', function(){    // 버튼에 클릭 이벤트가 발생하면
+    var list = document.createElement('li');     // html 'li' 태그 만들기
+    if (!inputBox.value)            // 할 일 입력창에 내용이 입력되지 않으면 alert 발생
+        alert('내용을 입력해 주세요!');
+    else
+    {
+        list.innerText = inputBox.value;  // <li>입력된 할 일</li>
+        toDoList.appendChild(list);       // 할 일 리스트창에 자식으로 붙이기
+        inputBox.value= "";               // 할 일 입력창 초기화
+    }
+
+    list.addEventListener('click', function(){      // 만들어진 list에 클릭 이벤트가 발생하면 줄 긋기
+        list.style.textDecoration = "line-through";
+    })
+    list.addEventListener('dblclick', function(){   // list에 더블클릭 이벤트가 발생하면 할 일 리스트창에서 지우기
+        toDoList.removeChild(list);
+    })
+})
+
+      const a = prompt("숫자를 입력하세요")  ;
+
+      for(let i = 0; i<a; i++){
+        document.write('<br>');
+        for(let j = 0; j<=i; j++){
+          document.write('^~');
+        }
+      }
+    </script>
 </body>
 </html>

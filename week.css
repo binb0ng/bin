@@ -1,3 +1,7 @@
+body{
+    background-color: #FFFAF0;
+}
+
 .me{
 color: #FFC228;
 text-align: center;
@@ -22,10 +26,6 @@ h1{
     font-weight: bold;
 }
 
-body{
-    background-color: #FFFAF0;
-}
-
 .b{
     width: 100px;
     height: 100px;
@@ -36,4 +36,21 @@ body{
     text-align: center;
  
 
+}
+
+.container {
+    width: 1080px;
+}
+
+#inputFiled {
+    width: 300px;
+    height: 46px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.to-dos {
+    margin-top:80px;
 }
