@@ -21,11 +21,11 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-  //
+  //특정값 제거
   const li = event.target.parentElement;
   li.remove();
 
-  //
+  //toDos에 변경된 내용으로 저장
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
 }
@@ -66,7 +66,7 @@ function paintToDo(newTodo) {
 }
 
 function handleToDoSubmit(event) {
-  //
+  //이벤트에 대한 기본 동작을 실행하지 않는다
   event.preventDefault();
 
   //[quiz] toDoInput의 값을 불러와 newTodo에 할당.
